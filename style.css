@@ -1,0 +1,594 @@
+/* portfolio style sheet */
+
+body {
+  background-color: aliceblue;
+  padding: 0;
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: yellow;
+}
+
+/* link styles */
+a {
+  color: darkblue;
+  text-decoration: none;
+}
+
+a:hover {
+  color: blue;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: darkblue;
+}
+
+/* fonts here */
+.boska {
+  font-family: "Boska", serif;
+}
+
+.cabinet {
+  font-family: "Cabinet Grotesk", sans-serif;
+}
+
+.jetbrains {
+  font-family: "JetBrains Mono", monospace;
+}
+
+.fira {
+  font-family: "Fira Code", monospace;
+}
+
+/* header section here  */
+
+#header-section {
+  background-color: white;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-color: aliceblue;
+}
+
+#title {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-size: 20vw;
+  font-weight: 1000;
+  margin-top: 10vh;
+  line-height: 11vw;
+}
+
+#heart {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  font-size: 3vw;
+  font-weight: 100;
+  margin-top: -20vh;
+  line-height: 10vw;
+}
+
+.rotate {
+  transform: rotate(180deg);
+  transition: transform 1s ease;
+}
+
+#header {
+  left: 50%;
+  transform: translateX(-50%);
+  top: 20px;
+  position: absolute;
+  font-size: 20px;
+  font-weight: 400;
+  text-align: left;
+  z-index: 10;
+}
+
+#subtitle {
+  bottom: 3vw;
+  width: 30vw;
+  position: absolute;
+  font-size: 25px;
+  font-weight: 400;
+  text-align: center;
+  text-align: center;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#title span:hover {
+  display: inline-block;
+  transition: transform 0.25s ease-in-out;
+  vertical-align: bottom;
+  transform: scaleY(0.5);
+  transform-origin: bottom;
+  color: rgb(245, 46, 182);
+}
+
+#title span:not(:hover) {
+  transform: scaleY(1);
+  transition: transform 0.25s ease-in-out;
+  transform-origin: bottom;
+}
+
+@media screen and (max-width: 768px) {
+  #subtitle {
+    font-size: 25px;
+    font-weight: 400;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    width: 60vw;
+  }
+  #header-section {
+    height: 80vw;
+  }
+  #title {
+    margin-top: -10px;
+  }
+}
+
+/* project section here  */
+
+#project-section {
+  background-color: aliceblue;
+  width: 100vw;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+#project-selector {
+  background-color: black;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-left-radius: 5vw;
+  border-top-right-radius: 5vw;
+}
+
+.selector-container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 2vw;
+  margin: 8vw;
+  align-items: center;
+  justify-content: center;
+}
+
+.box {
+  background-color: aliceblue;
+  width: 10vw;
+  height: 10vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5vw;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 10%;
+  transition: background-color 0.2s, border-radius 0.2s;
+}
+
+.box:hover {
+  background-color: rgb(249, 214, 244);
+  border-radius: 50%;
+}
+
+.box.clicked {
+  background-color: rgb(245, 46, 182);
+  border-radius: 50%;
+  color: white;
+}
+
+#project-view {
+  background-color: lightgray;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow-y: hidden;
+}
+
+#image-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 15px;
+  width: 90%;
+  height: 100%;
+  padding: 20px;
+}
+
+.image-cell {
+  background-color: white;
+  width: 100%;
+  padding-bottom: 100%;
+  position: relative;
+  border-radius: 5%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.image-cell img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+  position: relative;
+  margin: auto;
+  padding: 0;
+  width: 80%;
+  max-width: 700px;
+  max-height: 80vh;
+}
+
+.modal-content img {
+  width: 100%;
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  max-width: 700px;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #fff;
+  font-size: 100px;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.caption {
+  text-align: center;
+  color: #ccc;
+  padding: 10px 20px;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: auto;
+  padding: 16px;
+  color: white;
+  font-size: 50px;
+  transition: 0.6s ease;
+  user-select: none;
+  z-index: 1;
+}
+
+.prev {
+  left: 20px;
+}
+
+.next {
+  right: 20px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+#emptytext {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  #project-section {
+    height: auto;
+  }
+
+  #project-selector {
+    height: auto;
+    border-top-left-radius: 5vw;
+    border-top-right-radius: 5vw;
+  }
+
+  .selector-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3vw;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .box {
+    width: 10vw;
+    height: 10vw;
+  }
+
+  #project-view {
+    height: auto;
+    min-height: 75vh;
+    border-top-right-radius: 0;
+  }
+
+  #project-image {
+    width: 90vw;
+    height: 80vw;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  #emptytext {
+    top: 50vw;
+  }
+
+  #image-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* readings section here  */
+
+#readings-section {
+  background-color: lightgray;
+  width: 100vw;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+#readings-selector {
+  background-color: black;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-left-radius: 5vw;
+  border-top-right-radius: 5vw;
+}
+
+.readingsselector-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 2vw;
+  margin: 3vw;
+  align-items: center;
+  justify-content: center;
+}
+
+.readingpill {
+  background-color: aliceblue;
+  width: 15vw;
+  height: 5vw;
+  border-radius: 20vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5vw;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s, border-radius 0.2s;
+}
+
+.readingpill:hover {
+  background-color: lightyellow;
+  border-radius: 1vw;
+}
+
+.readingpill.clicked {
+  background-color: yellow;
+  color: black;
+  border-radius: 1vw;
+}
+
+#readings-view {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  background-color: white;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow-y: hidden;
+}
+
+
+#readings-content {
+  width: 36vw;
+  height: 36vw;
+  background-color: aliceblue;
+  padding: 2vw;
+  font-size: 1.4vw;
+  overflow: auto;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+
+#empty {
+  display: flex;
+  align-items: center;
+  position: relative;
+  font-size: 20px;
+  height: 100%;
+  justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+  #readings-section {
+    display: block;
+    height: auto;
+    min-height: 100vh;
+  }
+  #readings-selector {
+    position: relative;
+    display: block;
+    width: 100vw;
+    height: auto;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+  }
+  .readingsselector-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .readingsselector-container .readingpill,
+  .readings-container .readingpill .readingblob {
+    width: calc(20% - 1.5vw);
+    height: 7vw;
+  }
+  #readings-view {
+    display: block;
+    width: 100vw;
+    position: relative;
+    background-color: white;
+  }
+  #readings-content {
+    width: 80vw;
+    height: 80vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3.05vw;
+  }
+}
+
+/* footer section here  */
+
+#footer-section {
+  background-color: aliceblue;
+  width: 100vw;
+  height: 80vh;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+}
+
+#footertext {
+  width: 100vw;
+  align-items: center;
+  text-align: left;
+  justify-content: center;
+  position: absolute;
+  font-size: 25px;
+  font-weight: 700;
+  gap: 5vw;
+  display: flex;
+}
+
+#footerbigtext {
+  width: 100vw;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  position: relative;
+  font-size: 20vw;
+  font-weight: 1000;
+}
+
+#footerbigtext span:hover {
+  display: inline-block;
+  transition: transform 0.25s ease-in-out;
+  vertical-align: bottom;
+  transform: scaleY(0.5);
+  transform-origin: bottom;
+}
+
+#footerbigtext span:not(:hover) {
+  transform: scaleY(1);
+  transition: transform 0.25s ease-in-out;
+  transform-origin: bottom;
+}
+
+.button {
+  position: absolute; /* Ensure buttons are absolutely positioned */
+  background-color: lightskyblue;
+  color: darkblue;
+  text-decoration: none;
+  border: none;
+  border-radius: 0vw;
+  font-size: 2vw;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: 700;
+  padding: 1vw;
+}
+
+#button1 {
+  top: 0; /* Position at the top */
+  left: 0; /* Position at the left */
+}
+
+#button2 {
+  top: 0; /* Position at the top */
+  right: 0; /* Position at the right */
+}
+
+#button3 {
+  bottom: 0; /* Position at the bottom */
+  left: 0; /* Position at the left */
+}
+
+#button4 {
+  bottom: 0; /* Position at the bottom */
+  right: 0; /* Position at the right */
+}
+
+.button:hover {
+  background-color: rgb(212, 212, 212);
+}
+
+@media screen and (max-width: 768px) {
+  #footer-section {
+    max-height: 50vh;
+  }
+  .button {
+    font-size: 4vw;
+  }
+}

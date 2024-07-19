@@ -1,0 +1,155 @@
+<!-- portfolio index page -->
+
+<!DOCTYPE html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <link
+    href="https://api.fontshare.com/v2/css?f[]=boska@200,201,300,301,400,401,500,501,700,701,900,901,1,2&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@100,200,300,400,500,700,800,900&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<html lang="en">
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+  </style>
+
+  <body>
+    <section id="header-section">
+      <div id="heart" class="cabinet">💓<br /><br /></div>
+      <div id="heart" class="cabinet"><strong>happy</strong></div>
+      <div id="title" class="cabinet">
+        <span>6</span>
+        <span>&nbsp;</span>
+        <span>m</span>
+        <span>o</span>
+        <span>n</span>
+        <span>t</span>
+        <span>h</span>
+        <span>s</span>
+      </div>
+      <div id="header" class="cabinet">tony & jess</div>
+      <div id="subtitle" class="cabinet">
+        That's half a year! We've had so many wonderful memories and I can't
+        wait to make more.
+      </div>
+    </section>
+
+    <section id="project-section">
+      <div id="project-selector" class="cabinet">
+        <div class="selector-container">
+          <div class="box cabinet" onclick="handleBoxClick(this, 'jan')">
+            jan
+          </div>
+          <div class="box cabinet" onclick="handleBoxClick(this, 'feb')">
+            feb
+          </div>
+          <div class="box cabinet" onclick="handleBoxClick(this, 'mar')">
+            mar
+          </div>
+          <div class="box cabinet" onclick="handleBoxClick(this, 'apr')">
+            apr
+          </div>
+          <div class="box cabinet" onclick="handleBoxClick(this, 'may')">
+            may
+          </div>
+          <div class="box cabinet" onclick="handleBoxClick(this, 'jun')">
+            jun
+          </div>
+          <div class="box cabinet" onclick="handleBoxClick(this, 'jul')">
+            jul
+          </div>
+        </div>
+      </div>
+      <div id="project-view" class="cabinet">
+        <div id="image-grid"></div>
+        <div id="modal" class="modal">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <div class="modal-content">
+            <span class="prev" onclick="changeSlide(-1)">&#10094;</span>
+            <img id="modal-image" src="" alt="" />
+            <span class="next" onclick="changeSlide(1)">&#10095;</span>
+          </div>
+          <div id="caption" class="caption"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="readings-section">
+      <div id="readings-selector" class="cabinet">
+        <div class="readingsselector-container">
+          <div
+            class="readingpill cabinet"
+            data-content="<strong>It's Jan 27, 2024.</strong><br>
+                    It’s Jan. 27, 2024. 
+                    Tony finally asked me to be his girlfriend!! I’m still processing it, the fact that we’re official now. That he’s my boyfriend and I’m his girlfriend. That I’m a girlfriend? And I have a boyfriend?!! What in the world. It’s hard to describe the feelings I’m feeling. I think beyond anything it’s a sense of comfort and stability. A sense of home. And a sense of excitement for a new adventure with a new title and responsibilities. I told him I want to be a good girlfriend and I mean it. It’s got to be a partnership now. We’re a team. And I want us to be good to each other and grow together. I want us to be strong when things get tough and remember that it took months to commit to choosing each other and that decision was not made lightly. Today is the first day of our relationship. It was a Saturday. My cheek was still swollen. We stayed home. Tasted teas shared travels cooked congee and cuddled. Lots of cuddles and touching. But most of all trying to wrap my head around this idea that suddenly he’s my boyfriend and I’m his girlfriend? What does that mean. I’m excited to find out. Thank you to the world for bringing this man into my life. He’s wonderful and sweet and thoughtful and kind and I can’t believe he’s mine. My heart was his ages ago. But now his is mine too. We really did it. The Christmas wish came true. And I finally broke my 23 years of singleness streak. What a day. I care for him so deeply. And his hugs feel like home. I can’t believe we’re real. We’re together. We’re a couple. We’re official. It’s Jan. 27, 2024 and this date is going to be one that holds infinite special meaning to me. Every 27th in fact. 
+                "
+          >
+            1
+          </div>
+          <div
+            class="readingpill cabinet"
+            data-content="<strong>Mar 16. I love you.</strong><br>
+                    wow we were connected. He was inside me. All of him. We said our first I love yous too. Accidentally. Which was really funny. I said something like you’re in me all of you. And he heard I love you. To which he responded I love you too. And I was stunned. Huh?? What did you say? And then we figured it out. And we laughed and we’re embarrassed but re-enacted the scene for a bit of revisionist history. He said I love you. And I said I love you too. It feels really good to say something that’s been in my mind for a while and to express my love. And to hear it being said back. I really mean it and I know he does too. He’s never said I love you to anyone besides his mom once so to him it’s a big deal. It’s a big deal for me too. I’ve never said it to a guy before. And it feels early but also it feels right. I get to say it now. Yayyy!!! I love you Tony. Although it would be great if it didn’t happen during our first time we had sex, I wouldn’t change a thing about how it happened. Because it was funny and it’s our shared story now. Love you. 
+               "
+          >
+            2
+          </div>
+          <div
+            class="readingpill cabinet"
+            data-content="<strong>Mar 16. Paddling</strong><br>
+                    We were hangin out on my bed after dinner at Jane G and he was paddling. I paddled with him. Where are we paddling to? I asked. He thought about it and said we were paddling to relationship island. We were in relationship sea now. What happens on relationship island? I asked. He said we build a relationship house. We paddled together for our future. 
+                "
+          >
+            3
+          </div>
+          <div
+            class="readingpill cabinet"
+            data-content="<strong>Mar 30. lychee</strong><br>
+                    it’s nothing momentous but I feel like I love him more than I thought I could. when he’s telling me about his deepest darkest secrets his childhood, funny stories, embarrassing stories, things he’s never told anyone. when he told me about the time he took a lychee from the supermarket because he wanted to try it. how his parents made him put it back. how that’s the only “bad” thing that he’s done. how he was bullied in school growing up but how it made him motivated and got him to where he is now. I don’t think I would ever leave him. On my own. I want to love him forever. And I’m proud to be by his side. Sometimes I look at him and see my superhero. And it’s easy to forget there’s a little boy in there who just wanted a lychee. And I want to protect him. Both the boy and the man that he is now. 
+                "
+          >
+            4
+          </div>
+          <div
+            class="readingpill cabinet"
+            data-content="<strong>Apr 7. fight night.</strong><br>
+               fight night last night was incredible. We had so much fun and it was one of the most memorable nights we’ve spent together so far. The fights were amazing, Wharton won by a lot, we cheered and gasped and screamed. We sat in the Penn grad section with Miranda and Leslie for the most part and I’m glad he was okay with that. The after party was at the Fillmore and we danced to the DJs. There was Sean Kingston and some other random dudes. We talked to my friends his friends each other. We counted down the years until we could move in together. It started at 10 years and each time I said something it would decrease one year. Until we got to 3 years, from now. And I was like yea maybe! or it could be shorter I said. And just like that I started wondering about our future. On the way here, Tony told me about his future plans to be an entrepreneur and how he wanted to involve me in the conversation because I am important to him. He asked me what do you think about unemployed people? I was confused and laughed but realized he was asking about future him and not me. He told me about his passion and ambition and determination to build a business where during that time he won’t have income. I honestly could care less if he had no income. I just want to see him pursue his dreams and accomplish anything he set his heart on. And I want to be there by his side supporting him in whatever way I can. But I can see why he told me in a somewhat serious way on that school bus to the Fillmore. Because it is important and I really appreciate him wanting to let me know. I think I already knew but that made me feel like I was part of the conversation. Anyway. We danced in the crowd and it was so much fun. I can’t dance for my life but it was fun dancing with him. The most memorable part was on our Lyft home though. Where he held my hand and we just stared at each other. I think there was a very long moment or several where I felt that this. This right here. This is love. And I felt it so strongly like I could replay our car ride a million times over and it would never stop making me feel that way. We spoke in Chinese. He told me I was incredibly beautiful tonight and called me 美麗的郁蓉。he said his heart beat really fast all night long. he called me an angel, said when he came back from the military thing in quantico and saw me it was like I was his angel. And he asked 你願意做我的天使嗎？我愿意。I said. 我只护着你 I told him. 我也只护你 he said back. 我們互相護著。in different ways. He said he takes care of me outside hahaa which is true bc I lose my brain when I’m with him outside and I take care of him in other ways. I think it’s our way of loving caring protecting each other. We said 我愛你。I stared into his eyes like our eyes were magnetic and idk I just felt like the happiest girl in the world. I said 你讓我覺得很安心。he heard 開心 which is correct to. He said the same back and 那就讓我們永遠開心. I loved that. We smiled and held each other in our eyes for what felt like forever and just a moment until the Lyft got to my apartment. A kiss goodbye and love yous. What a wonderful night!!! 
+               "
+          >
+            5
+          </div>
+        </div>
+      </div>
+      <div id="readings-view" class="cabinet">
+        <div id="button1" class="color-button cabinet button">tony</div>
+        <div id="button2" class="color-button cabinet button">笨蛋</div>
+        <div id="button3" class="color-button cabinet button">babe</div>
+        <div id="button4" class="color-button cabinet button">t-bear</div>
+        <div id="readings-content" class="cabinet">
+          <div id="empty" class="cabinet">
+            click a number to read some of <br />jess's favorite old journal
+            entries
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="footer-section">
+      <div id="footerbigtext" class="cabinet">
+        I love you
+
+        <div id="subtitle" class="cabinet"><p style="color: lightskyblue;">我愛你 我愛你 我愛你 我愛你 我愛你 我愛你<br> 我愛你<br> 我愛你<br> 我愛你<br> 我愛你<br> 我愛你 <br> 我愛你 <br> 我愛你 </div>
+        <div id="footertext" class="cabinet">
+          jess, 笨蛋’s incorporated © 2024
+        </div>
+      </div>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>
